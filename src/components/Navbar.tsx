@@ -17,7 +17,6 @@ interface SubOption {
 
 const Navbar: React.FC = () => {
     const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
-    const [selectedSubLocation, setSelectedSubLocation] = useState<any>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const [expandedSections, setExpandedSections] = useState<ExpandedSections>({
         parks: false,

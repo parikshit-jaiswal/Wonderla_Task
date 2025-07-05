@@ -19,8 +19,6 @@ export interface RideCardProps {
 export interface CarouselControlsProps {
     onPrevSlide: () => void;
     onNextSlide: () => void;
-    canScrollPrev: boolean;
-    canScrollNext: boolean;
 }
 
 export interface Location {

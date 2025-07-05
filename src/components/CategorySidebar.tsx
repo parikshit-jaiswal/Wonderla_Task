@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 interface CategorySidebarProps {
     selectedIndex: number;

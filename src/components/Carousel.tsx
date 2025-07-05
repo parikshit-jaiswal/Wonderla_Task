@@ -68,8 +68,6 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
             <CarouselControls
                 onPrevSlide={scrollPrev}
                 onNextSlide={scrollNext}
-                canScrollPrev={emblaApi?.canScrollPrev() || false}
-                canScrollNext={emblaApi?.canScrollNext() || false}
             />
             <div className="embla overflow-hidden mt-8" ref={emblaRef}>
                 <div className="embla__container flex">
