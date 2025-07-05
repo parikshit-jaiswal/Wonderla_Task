@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Sidebar from "./Sidebar";
 import { ExpandedSections } from "../types";
 
@@ -17,7 +18,6 @@ interface SubOption {
 
 const Navbar: React.FC = () => {
     const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
-    const [selectedSubLocation, setSelectedSubLocation] = useState<any>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const [expandedSections, setExpandedSections] = useState<ExpandedSections>({
         parks: false,
@@ -66,10 +66,12 @@ const Navbar: React.FC = () => {
             <div className="flex justify-between items-center gap-x-7">
                 {/* Logo */}
                 <div>
-                    <img
+                    <Image
                         className="transition-transform duration-300 hover:scale-108 h-12 hover:cursor-pointer"
                         alt="wonderla"
                         src="https://d22pimhl2qmbj7.cloudfront.net/public/Main_Logo_0ad2299b54.png?w=256&q=75"
+                        width={256}
+                        height={48}
                     />
                 </div>
 
@@ -81,16 +83,20 @@ const Navbar: React.FC = () => {
                         onMouseEnter={() => setIsLocationOpen(true)}
                         onMouseLeave={() => setIsLocationOpen(false)}
                     >
-                        <img
+                        <Image
                             alt="icon"
                             className="h-4.5 m-0"
                             src="/icons/location.svg"
+                            width={18}
+                            height={18}
                         />
                         <div className="text-[#717D92] m-0 font-bold">LOCATIONS</div>
-                        <img
+                        <Image
                             alt="downArrow"
                             className="m-0 transition-transform duration-200 group-hover:rotate-180"
                             src="/icons/downarrow.svg"
+                            width={12}
+                            height={8}
                         />
 
                         {/* Hover area */}
@@ -104,10 +110,12 @@ const Navbar: React.FC = () => {
                                         <div className="flex justify-between items-center group/subSection relative">
                                             <div className="flex items-center gap-4">
                                                 <div>
-                                                    <img
+                                                    <Image
                                                         className="h-12 w-12 rounded-xl object-cover"
                                                         alt={location.name}
                                                         src={location.image}
+                                                        width={48}
+                                                        height={48}
                                                     />
                                                 </div>
                                                 <div className="uppercase">{location.name}</div>
@@ -141,10 +149,12 @@ const Navbar: React.FC = () => {
                                                         <div key={subOption.name}>
                                                             <div className="flex items-center gap-4">
                                                                 <div>
-                                                                    <img
+                                                                    <Image
                                                                         className="h-12 w-12 rounded-xl object-cover"
                                                                         alt={subOption.name}
                                                                         src={subOption.image}
+                                                                        width={48}
+                                                                        height={48}
                                                                     />
                                                                 </div>
                                                                 <div className="uppercase">{subOption.name}</div>
@@ -178,13 +188,15 @@ const Navbar: React.FC = () => {
                     {/* Other Navigation Items */}
                     <a href="">
                         <div className="flex items-center space-x-2 hover:cursor-pointer gap-2 text-sm">
-                            <img
+                            <Image
                                 alt="icon"
                                 className="h-4.5 m-0"
                                 src="https://d22pimhl2qmbj7.cloudfront.net/public/discount_star_01_fdc6bc5632.svg?w=48&q=75"
                                 style={{
                                     filter: "brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(368%) hue-rotate(182deg) brightness(94%) contrast(86%)"
                                 }}
+                                width={48}
+                                height={18}
                             />
                             <div className="text-[#717D92] font-bold">OFFERS</div>
                         </div>
@@ -192,13 +204,15 @@ const Navbar: React.FC = () => {
 
                     <a href="">
                         <div className="flex items-center space-x-2 hover:cursor-pointer gap-2 text-sm">
-                            <img
+                            <Image
                                 alt="icon"
                                 className="h-4.5 m-0"
                                 src="https://d22pimhl2qmbj7.cloudfront.net/public/marker_02_e495ae7481.svg?w=48&q=75"
                                 style={{
                                     filter: "brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(368%) hue-rotate(182deg) brightness(94%) contrast(86%)"
                                 }}
+                                width={48}
+                                height={18}
                             />
                             <div className="text-[#717D92] font-bold">RIDES</div>
                         </div>
@@ -206,13 +220,15 @@ const Navbar: React.FC = () => {
 
                     <a href="">
                         <div className="flex items-center space-x-2 hover:cursor-pointer gap-2 text-sm">
-                            <img
+                            <Image
                                 alt="icon"
                                 className="h-4.5 m-0"
                                 src="https://d22pimhl2qmbj7.cloudfront.net/public/Frame_12_ebee895750.svg?w=48&q=75"
                                 style={{
                                     filter: "brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(368%) hue-rotate(182deg) brightness(94%) contrast(86%)"
                                 }}
+                                width={48}
+                                height={18}
                             />
                             <div className="text-[#717D92] font-bold">RESTAURANTS</div>
                         </div>
@@ -220,13 +236,15 @@ const Navbar: React.FC = () => {
 
                     <a href="">
                         <div className="flex items-center space-x-2 hover:cursor-pointer gap-2 text-sm">
-                            <img
+                            <Image
                                 alt="icon"
                                 className="h-4.5 m-0"
                                 src="https://d22pimhl2qmbj7.cloudfront.net/public/Frame_13_c4d6212160.svg?w=48&q=75"
                                 style={{
                                     filter: "brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(368%) hue-rotate(182deg) brightness(94%) contrast(86%)"
                                 }}
+                                width={48}
+                                height={18}
                             />
                             <div className="text-[#717D92] font-bold">EVENTS</div>
                         </div>
@@ -238,7 +256,7 @@ const Navbar: React.FC = () => {
                     <button className="px-2.5 py-2.5 rounded-lg text-black bg-[#fad600] hover:cursor-pointer">
                         <div className="flex justify-center items-center gap-1">
                             <div className="text-xs font-extrabold text-[#334dcf]">BOOK TICKETS</div>
-                            <img className="h-[12px]" alt="icon" src="/icons/tickets.svg" />
+                            <Image className="h-[12px]" alt="icon" src="/icons/tickets.svg" width={12} height={12} />
                         </div>
                     </button>
 

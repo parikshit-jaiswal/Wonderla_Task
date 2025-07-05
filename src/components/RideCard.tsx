@@ -19,7 +19,7 @@ const RideCard: React.FC<RideCardProps> = ({ slide, index, isActive }) => {
                 videoRef.current.currentTime = 0;
             }
         }
-    }, [isActive, slide.videoUrl]);
+    }, [isActive, slide.videoUrl, index, slide.title]);
 
     return (
         <div key={index} className="rounded-4xl m-4 max-w-[250px] flex-none transform-gpu relative">

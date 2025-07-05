@@ -2,7 +2,7 @@
 
 import { CarouselControlsProps } from "@/types";
 
-const CarouselControls: React.FC<CarouselControlsProps> = ({ onPrevSlide, onNextSlide, canScrollPrev, canScrollNext }) => {
+const CarouselControls: React.FC<CarouselControlsProps> = ({ onPrevSlide, onNextSlide }) => {
     return (
         <div className="">
             <div className="absolute top-2 right-14 flex gap-4">
