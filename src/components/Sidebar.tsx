@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { SidebarProps } from '../types';
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, toggleSection, locations }) => {
@@ -17,7 +18,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                 style={{ zIndex: 50 }}
             >
                 <div className="flex justify-between items-center bg-white w-full p-8 pb-3">
-                    <img className="h-15" alt="Wonderla Logo" src="https://d22pimhl2qmbj7.cloudfront.net/public/Main_Logo_0ad2299b54.png?w=256&q=75" />
+                    <Image 
+                        className="h-15" 
+                        alt="Wonderla Logo" 
+                        src="https://d22pimhl2qmbj7.cloudfront.net/public/Main_Logo_0ad2299b54.png?w=256&q=75"
+                        width={256}
+                        height={60}
+                    />
                     <button
                         className="mr-4 p-1.5 rounded-full cursor-pointer border-gray-200 border hover:bg-gray-50 transition-colors"
                         onClick={onClose}
@@ -40,7 +47,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             >
                                 <div className="flex items-center gap-3">
                                     <div>
-                                        <img className="h-7" alt="Parks icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/playground_e8b25627b1.svg?w=48&q=75" />
+                                        <Image 
+                                            className="h-7" 
+                                            alt="Parks icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/playground_e8b25627b1.svg?w=48&q=75"
+                                            width={48}
+                                            height={28}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-gray-900">Parks</div>
@@ -68,7 +81,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                                         <div key={location.name}>
                                             <div className="flex cursor-pointer items-center flex-col border border-gray-200 shadow-md rounded-2xl p-3 hover:shadow-lg transition-shadow bg-white">
                                                 <div>
-                                                    <img className="rounded-full h-10 w-10 mb-2 object-cover" alt={location.name} src={location.image} />
+                                                    <Image 
+                                                        className="rounded-full h-10 w-10 mb-2 object-cover" 
+                                                        alt={location.name} 
+                                                        src={location.image}
+                                                        width={40}
+                                                        height={40}
+                                                    />
                                                 </div>
                                                 <div className="capitalize text-gray-900 font-medium text-sm">{location.name}</div>
                                             </div>
@@ -89,7 +108,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
                                 <div className="flex items-center gap-3">
                                     <div>
-                                        <img className="h-7" alt="Resorts icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/city_45e0a87cc8.svg?w=48&q=75" />
+                                        <Image 
+                                            className="h-7" 
+                                            alt="Resorts icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/city_45e0a87cc8.svg?w=48&q=75"
+                                            width={48}
+                                            height={28}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-gray-900">Resorts</div>
@@ -109,7 +134,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
                                 <div className="flex items-center gap-3">
                                     <div>
-                                        <img className="h-7" alt="Offers icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/discount_e3ac599ad9.svg?w=48&q=75" />
+                                        <Image 
+                                            className="h-7" 
+                                            alt="Offers icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/discount_e3ac599ad9.svg?w=48&q=75"
+                                            width={48}
+                                            height={28}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-gray-900">Offers & Combos</div>
@@ -129,7 +160,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
                                 <div className="flex items-center gap-3">
                                     <div>
-                                        <img className="h-7" alt="Timings icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/time_68af0a1a84.svg?w=48&q=75" />
+                                        <Image 
+                                            className="h-7" 
+                                            alt="Timings icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/time_68af0a1a84.svg?w=48&q=75"
+                                            width={48}
+                                            height={28}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-gray-900">Timings And Guidelines</div>
@@ -149,7 +186,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 p-4 rounded-2xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: 'rgb(250, 214, 0)' }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <img className="h-10" alt="Group booking icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/group_booking_1adcd0978a.svg?w=96&q=75" />
+                                        <Image 
+                                            className="h-10" 
+                                            alt="Group booking icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/group_booking_1adcd0978a.svg?w=96&q=75"
+                                            width={96}
+                                            height={40}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-black">Group Booking</div>
@@ -160,7 +203,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 p-4 rounded-2xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: 'rgb(51, 77, 207)' }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <img className="h-10" alt="Tour portal icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/tour_portal_c097403085.svg?w=96&q=75" />
+                                        <Image 
+                                            className="h-10" 
+                                            alt="Tour portal icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/tour_portal_c097403085.svg?w=96&q=75"
+                                            width={96}
+                                            height={40}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-white">Tour Operator Portal</div>
@@ -171,7 +220,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 p-4 rounded-2xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: 'rgb(250, 214, 0)' }}>
                                 <div className="flex items-center gap-4">
                                     <div>
-                                        <img className="h-10" alt="Partner icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/group_booking_1adcd0978a.svg?w=96&q=75" />
+                                        <Image 
+                                            className="h-10" 
+                                            alt="Partner icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/group_booking_1adcd0978a.svg?w=96&q=75"
+                                            width={96}
+                                            height={40}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-black">Partner With Us</div>
@@ -186,7 +241,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                             <div className="flex-1 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
                                 <div className="flex items-center gap-3">
                                     <div>
-                                        <img className="h-7" alt="About us icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/about_us_3ae10e9512.svg?w=48&q=75" />
+                                        <Image 
+                                            className="h-7" 
+                                            alt="About us icon" 
+                                            src="https://d22pimhl2qmbj7.cloudfront.net/public/about_us_3ae10e9512.svg?w=48&q=75"
+                                            width={48}
+                                            height={28}
+                                        />
                                     </div>
                                     <div>
                                         <div className="text-xl  mb-1 text-gray-900">About Us</div>
@@ -210,7 +271,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                                 >
                                     <div className="flex items-center gap-3">
                                         <div>
-                                            <img className="h-7" alt="Quick links icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/unlink_1_bb57b8aa2f.svg?w=48&q=75" />
+                                            <Image 
+                                                className="h-7" 
+                                                alt="Quick links icon" 
+                                                src="https://d22pimhl2qmbj7.cloudfront.net/public/unlink_1_bb57b8aa2f.svg?w=48&q=75"
+                                                width={48}
+                                                height={28}
+                                            />
                                         </div>
                                         <div>
                                             <div className="text-xl  mb-1 text-gray-900">Quick Links</div>
@@ -255,7 +322,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, expandedSections, to
                         <div className="flex-1 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
                             <div className="flex items-center gap-3">
                                 <div>
-                                    <img className="h-7" alt="Contact us icon" src="https://d22pimhl2qmbj7.cloudfront.net/public/support_1_f316ee7cce.svg?w=48&q=75" />
+                                    <Image 
+                                        className="h-7" 
+                                        alt="Contact us icon" 
+                                        src="https://d22pimhl2qmbj7.cloudfront.net/public/support_1_f316ee7cce.svg?w=48&q=75"
+                                        width={48}
+                                        height={28}
+                                    />
                                 </div>
                                 <div>
                                     <div className="text-xl  mb-1 text-gray-900">Contact Us</div>

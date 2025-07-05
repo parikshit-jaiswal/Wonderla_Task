@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Sidebar from "./Sidebar";
 import { ExpandedSections } from "../types";
 
@@ -16,12 +17,14 @@ interface SubOption {
 }
 
 const Navbar: React.FC = () => {
+  
   const [isLocationOpen, setIsLocationOpen] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [expandedSections, setExpandedSections] = useState<ExpandedSections>({
     parks: false,
     quickLinks: false,
   });
+
 
   const toggleSection = (section: keyof ExpandedSections) => {
     setExpandedSections((prev) => ({
@@ -94,6 +97,7 @@ const Navbar: React.FC = () => {
               src="/icons/downarrow.svg"
             />
 
+
             {/* Hover area */}
             <div className="h-10 absolute top-4 w-full"></div>
 
@@ -120,6 +124,7 @@ const Navbar: React.FC = () => {
                         </div>
                       </div>
 
+
                       {location.hasSubOptions && (
                         <div>
                           <div className="h-16 -top-3 w-12 absolute"></div>
@@ -140,6 +145,7 @@ const Navbar: React.FC = () => {
                           </div>
                         </div>
                       )}
+
 
                       {/* Sub-dropdown for Bengaluru */}
                       {location.hasSubOptions && (
@@ -171,6 +177,7 @@ const Navbar: React.FC = () => {
                         </div>
                       )}
                     </div>
+
 
                     {index < locations.length - 1 && (
                       <div>
@@ -246,6 +253,7 @@ const Navbar: React.FC = () => {
             </div>
           </a>
         </div>
+
 
         {/* Right Side - Book Tickets & Menu */}
         <div className="flex justify-center items-center gap-8">
